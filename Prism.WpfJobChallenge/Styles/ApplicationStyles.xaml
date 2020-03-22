@@ -1,0 +1,19 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:Prism.WpfJobChallenge.Styles">
+
+    <Style x:Key="AlternatingListViewItem" TargetType="ListViewItem">
+        <Style.Triggers>
+            <Trigger Property="ItemsControl.AlternationIndex"  Value="0">
+                <Setter Property="Background" Value="LightCyan" />
+            </Trigger>
+            <Trigger Property="ItemsControl.AlternationIndex"  Value="1">
+                <Setter Property="Background" Value="Azure" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <Style TargetType="ListView">
+        <Setter Property="AlternationCount" Value="2" />
+    </Style>
+
+</ResourceDictionary>

@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Points>
+  <Point X="1" Y="1"/>
+  <Point X="2" Y="3"/>
+  <Point X="3" Y="4"/>
+  <Point X="4" Y="4.5"/>
+  <Point X="5" Y="4.7"/>
+  <Point X="6" Y="4.8"/>
+  <Point X="7" Y="4.9"/>
+  <Point X="8" Y="5.2"/>
+  <Point X="9" Y="5.7"/>
+  <Point X="10" Y="6.5"/>
+  <Point X="12" />
+  <Point X="13" Y="9.5"/>
+  <Point X="14" Y="12"/>
+  <Point X="15" Y="15"/>
+  <Point X="16" Y="19"/>
+  <Point X="17" Y="29"/>
+  <Point X="18" Y="45"/>
+  <Point X="19" Y="65"/>
+  <Point X="20" Y="95"/>
+  <Point X="21" Y="135"/>
+  <Point X="22" Y="200"/>
+</Points>

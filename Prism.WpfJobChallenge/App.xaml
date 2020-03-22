@@ -1,0 +1,20 @@
+﻿<prism:PrismApplication x:Class="Prism.WpfJobChallenge.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Prism.WpfJobChallenge"
+             xmlns:converters="clr-namespace:Prism.WpfJobChallenge.Converters"
+             xmlns:prism="http://prismlibrary.com/" >
+    <Application.Resources>
+
+        <ResourceDictionary>
+
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles\ApplicationStyles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
+            <converters:DoubleToRoundedDoubleConverter x:Key="DoubleToRoundedDoubleConverter"></converters:DoubleToRoundedDoubleConverter>
+
+        </ResourceDictionary>
+
+    </Application.Resources>
+</prism:PrismApplication>

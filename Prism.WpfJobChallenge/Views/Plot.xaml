@@ -1,0 +1,284 @@
+﻿<UserControl x:Class="Prism.WpfJobChallenge.Views.Plot"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:prism="http://prismlibrary.com/"  
+             xmlns:oxy="http://oxyplot.org/wpf"
+             prism:ViewModelLocator.AutoWireViewModel="True">
+    <UserControl.Resources>
+        <Style TargetType="Button" x:Key="HighlightedButton">
+            <Style.Triggers>
+                <DataTrigger  Binding="{Binding CanSelectFitting, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
+                              Value="False">
+                    <Setter Property="Background" Value="Tomato"/>
+                </DataTrigger>
+                <DataTrigger  Binding="{Binding CanSelectFitting, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
+                              Value="True">
+                    <Setter Property="Background" Value="Transparent"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style TargetType="ListView" x:Key="HighlightedList">
+            <Style.Triggers>
+                <DataTrigger  Binding="{Binding CanSelectFitting, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
+                              Value="False">
+                    <Setter Property="Background" Value="Pink"/>
+                </DataTrigger>
+                <DataTrigger  Binding="{Binding CanSelectFitting, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
+                              Value="True">
+                    <Setter Property="Background" Value="Transparent"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+    </UserControl.Resources>
+    
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="4*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Row="0" HorizontalAlignment="Center"
+                                       FontSize="30" 
+                                       FontWeight="SemiBold">Functions</TextBlock>
+            
+            <ListView Name="ListViewFittings"
+                Grid.Row="1" 
+                ItemsSource="{Binding AvailableFittings, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
+                SelectedItem="{Binding SelectedFitting, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                FontSize="20" 
+                        Style="{StaticResource HighlightedList}"
+                FontWeight="SemiBold"
+                HorizontalAlignment="Stretch" 
+                VerticalAlignment="Stretch">
+                <ListView.ItemContainerStyle>
+                    <Style TargetType="{x:Type ListViewItem}">
+                        <Setter Property="Focusable" Value="{Binding DataContext.CanSelectFitting, ElementName=ListViewFittings, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                    </Style>
+                </ListView.ItemContainerStyle>
+            </ListView>
+
+            <Grid Grid.Row="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <Grid Name="GridDataset" 
+                      HorizontalAlignment="Stretch" 
+                      Background="Green">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <TextBlock HorizontalAlignment="Center"
+                               Grid.Column="0"
+                               FontSize="30" 
+                               FontWeight="SemiBold">Dataset
+                    </TextBlock >
+
+                    <Button 
+                        Grid.Column="1" 
+                        BorderThickness="0"
+                        FontSize="20" 
+                        Content="Select Dataset"
+                        Style="{StaticResource HighlightedButton}"
+                        Command="{Binding OpenDataSetCommand}" >
+
+                    </Button>
+                    <Grid
+                            Background="LightGreen"
+                            Grid.Column="0"
+                            Grid.ColumnSpan="2"
+                            Grid.Row="1">
+                        <TextBlock HorizontalAlignment="Stretch"
+                                   Margin="5,5,0,5"
+                               FontSize="20" 
+                               FontWeight="SemiBold"
+                               TextWrapping="Wrap"
+                               Text="{Binding Path=SelectedDataset, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}">
+                        </TextBlock >
+
+                    </Grid>
+                </Grid>
+                
+                <ListView Name="ListViewDataset"
+                Grid.Row="1" 
+                ItemsSource="{Binding Points, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
+                SelectedItem="{Binding SelectedPoint, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                HorizontalAlignment="Stretch"
+                ItemContainerStyle="{StaticResource AlternatingListViewItem}"
+                HorizontalContentAlignment="Stretch"
+                VerticalAlignment="Stretch">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid HorizontalAlignment="Stretch">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Grid.Column="0" 
+                                           HorizontalAlignment="Stretch"
+                                       FontSize="20" 
+                                       FontWeight="SemiBold"
+                                       Text="X: ">
+                                </TextBlock>
+                                <TextBlock Grid.Column="1" 
+                                       FontSize="20" 
+                                       FontWeight="SemiBold"
+                                       Text="{Binding Path=X, Converter={StaticResource DoubleToRoundedDoubleConverter}}">
+                                </TextBlock>
+                                <TextBlock Grid.Column="2" 
+                                           HorizontalAlignment="Stretch"
+                                       FontSize="20" 
+                                       FontWeight="SemiBold"
+                                       Text="Y: ">
+                                </TextBlock>
+                                <TextBlock Grid.Column="3" 
+                                       FontSize="20" 
+                                       FontWeight="SemiBold"
+                                       Text="{Binding Path=Y, Converter={StaticResource DoubleToRoundedDoubleConverter}}">
+                                </TextBlock>
+                            </Grid>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+                <Grid Name="GridFitted"
+                    Grid.Row="2" HorizontalAlignment="Stretch" Background="Goldenrod">
+                    <TextBlock HorizontalAlignment="Center"
+                                       FontSize="30" 
+                                       FontWeight="SemiBold">Fitted
+                    </TextBlock>
+                </Grid>
+
+                <Grid Name="GridAB"
+                    Grid.Row="3"  
+                    Background="LightGoldenrodYellow" 
+                    HorizontalAlignment="Stretch">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" 
+                                           HorizontalAlignment="Stretch"
+                                       FontSize="20" 
+                                       FontWeight="SemiBold"
+                                       Text="A: ">
+                    </TextBlock>
+                    <TextBlock Grid.Column="1" 
+                                       FontSize="20" 
+                                       FontWeight="SemiBold"
+                                       Text="{Binding Path=A, Converter={StaticResource DoubleToRoundedDoubleConverter}}">
+                    </TextBlock>
+                    <TextBlock Grid.Column="2" 
+                                           HorizontalAlignment="Stretch"
+                                       FontSize="20" 
+                                       FontWeight="SemiBold"
+                                       Text="B: ">
+                    </TextBlock>
+                    <TextBlock Grid.Column="3" 
+                                       FontSize="20" 
+                                       FontWeight="SemiBold"
+                                       Text="{Binding Path=B, Converter={StaticResource DoubleToRoundedDoubleConverter}}">
+                    </TextBlock>
+                </Grid>
+
+                <Grid Name="GridError"
+                    Grid.Row="4"  
+                    Background="LightGoldenrodYellow" 
+                    HorizontalAlignment="Stretch">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="3*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" 
+                                           HorizontalAlignment="Stretch"
+                                       FontSize="20" 
+                                       FontWeight="SemiBold"
+                                       Text="Error: ">
+                    </TextBlock>
+                    <TextBlock Grid.Column="1" 
+                                       FontSize="20" 
+                                       FontWeight="SemiBold"
+                                       Text="{Binding Path=Error, Converter={StaticResource DoubleToRoundedDoubleConverter}}">
+                    </TextBlock>
+                </Grid>
+                
+                <ListView Name="ListViewFitted"
+                Grid.Row="5" 
+                ItemsSource="{Binding FittedPoints, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
+                SelectedItem="{Binding SelectedFittedPoint, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                HorizontalAlignment="Stretch" 
+                ItemContainerStyle="{StaticResource AlternatingListViewItem}"
+                HorizontalContentAlignment="Stretch"
+                VerticalAlignment="Stretch">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid HorizontalAlignment="Stretch">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Grid.Column="0" 
+                                           HorizontalAlignment="Stretch"
+                                       FontSize="20" 
+                                       FontWeight="SemiBold"
+                                       Text="X: ">
+                                </TextBlock>
+                                <TextBlock Grid.Column="1" 
+                                       FontSize="20" 
+                                       FontWeight="SemiBold"
+                                       Text="{Binding Path=X, Converter={StaticResource DoubleToRoundedDoubleConverter}}">
+                                </TextBlock>
+                                <TextBlock Grid.Column="2" 
+                                           HorizontalAlignment="Stretch"
+                                       FontSize="20" 
+                                       FontWeight="SemiBold"
+                                       Text="Y: ">
+                                </TextBlock>
+                                <TextBlock Grid.Column="3" 
+                                       FontSize="20" 
+                                       FontWeight="SemiBold"
+                                       Text="{Binding Path=Y, Converter={StaticResource DoubleToRoundedDoubleConverter}}">
+                                </TextBlock>
+                            </Grid>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                
+            </Grid>
+        </Grid>
+
+        <oxy:Plot Grid.Column="1" FontSize="30" TitleFontSize="30" Title="{Binding CalculatedFitting}">
+            <oxy:Plot.Series>
+                <oxy:LineSeries MarkerFill="Green" MarkerType="Circle" ItemsSource="{Binding Points}"/>
+                <oxy:LineSeries MarkerFill="Goldenrod" MarkerType="Circle" ItemsSource="{Binding FittedPoints}"/>
+            </oxy:Plot.Series>
+        </oxy:Plot>
+    </Grid>
+</UserControl>
