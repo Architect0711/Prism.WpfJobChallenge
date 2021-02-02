@@ -1,26 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\RBant\\source\\repos\\_Prism.WpfJobChallenge\\Prism.WpfJobChallenge.Tests\\Prism.WpfJobChallenge.Tests.csproj": {}
+    "C:\\Users\\Robert\\Desktop\\New folder\\Prism.WpfJobChallenge\\Prism.WpfJobChallenge.Tests\\Prism.WpfJobChallenge.Tests.csproj": {}
   },
   "projects": {
-    "C:\\Users\\RBant\\source\\repos\\_Prism.WpfJobChallenge\\Prism.WpfJobChallenge.Tests\\Prism.WpfJobChallenge.Tests.csproj": {
+    "C:\\Users\\Robert\\Desktop\\New folder\\Prism.WpfJobChallenge\\Prism.WpfJobChallenge.Tests\\Prism.WpfJobChallenge.Tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\RBant\\source\\repos\\_Prism.WpfJobChallenge\\Prism.WpfJobChallenge.Tests\\Prism.WpfJobChallenge.Tests.csproj",
+        "projectUniqueName": "C:\\Users\\Robert\\Desktop\\New folder\\Prism.WpfJobChallenge\\Prism.WpfJobChallenge.Tests\\Prism.WpfJobChallenge.Tests.csproj",
         "projectName": "Prism.WpfJobChallenge.Tests",
-        "projectPath": "C:\\Users\\RBant\\source\\repos\\_Prism.WpfJobChallenge\\Prism.WpfJobChallenge.Tests\\Prism.WpfJobChallenge.Tests.csproj",
-        "packagesPath": "C:\\Users\\RBant\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\RBant\\source\\repos\\_Prism.WpfJobChallenge\\Prism.WpfJobChallenge.Tests\\obj\\",
+        "projectPath": "C:\\Users\\Robert\\Desktop\\New folder\\Prism.WpfJobChallenge\\Prism.WpfJobChallenge.Tests\\Prism.WpfJobChallenge.Tests.csproj",
+        "packagesPath": "C:\\Users\\Robert\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Robert\\Desktop\\New folder\\Prism.WpfJobChallenge\\Prism.WpfJobChallenge.Tests\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\RBant\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\Robert\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -31,9 +29,10 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\RBant\\source\\repos\\_Prism.WpfJobChallenge\\Prism.WpfJobChallenge\\Prism.WpfJobChallenge.csproj": {
-                "projectPath": "C:\\Users\\RBant\\source\\repos\\_Prism.WpfJobChallenge\\Prism.WpfJobChallenge\\Prism.WpfJobChallenge.csproj"
+              "C:\\Users\\Robert\\Desktop\\New folder\\Prism.WpfJobChallenge\\Prism.WpfJobChallenge\\Prism.WpfJobChallenge.csproj": {
+                "projectPath": "C:\\Users\\Robert\\Desktop\\New folder\\Prism.WpfJobChallenge\\Prism.WpfJobChallenge\\Prism.WpfJobChallenge.csproj"
               }
             }
           }
@@ -46,6 +45,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "MSTest.TestAdapter": {
               "target": "Package",
@@ -85,27 +85,25 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\RBant\\source\\repos\\_Prism.WpfJobChallenge\\Prism.WpfJobChallenge\\Prism.WpfJobChallenge.csproj": {
+    "C:\\Users\\Robert\\Desktop\\New folder\\Prism.WpfJobChallenge\\Prism.WpfJobChallenge\\Prism.WpfJobChallenge.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\RBant\\source\\repos\\_Prism.WpfJobChallenge\\Prism.WpfJobChallenge\\Prism.WpfJobChallenge.csproj",
+        "projectUniqueName": "C:\\Users\\Robert\\Desktop\\New folder\\Prism.WpfJobChallenge\\Prism.WpfJobChallenge\\Prism.WpfJobChallenge.csproj",
         "projectName": "Prism.WpfJobChallenge",
-        "projectPath": "C:\\Users\\RBant\\source\\repos\\_Prism.WpfJobChallenge\\Prism.WpfJobChallenge\\Prism.WpfJobChallenge.csproj",
-        "packagesPath": "C:\\Users\\RBant\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\RBant\\source\\repos\\_Prism.WpfJobChallenge\\Prism.WpfJobChallenge\\obj\\",
+        "projectPath": "C:\\Users\\Robert\\Desktop\\New folder\\Prism.WpfJobChallenge\\Prism.WpfJobChallenge\\Prism.WpfJobChallenge.csproj",
+        "packagesPath": "C:\\Users\\Robert\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Robert\\Desktop\\New folder\\Prism.WpfJobChallenge\\Prism.WpfJobChallenge\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\RBant\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\Robert\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.0"
@@ -116,6 +114,7 @@
         },
         "frameworks": {
           "netcoreapp3.0": {
+            "targetAlias": "netcoreapp3.0",
             "projectReferences": {}
           }
         },
@@ -127,6 +126,7 @@
       },
       "frameworks": {
         "netcoreapp3.0": {
+          "targetAlias": "netcoreapp3.0",
           "dependencies": {
             "MathNet.Numerics": {
               "target": "Package",
@@ -146,7 +146,7 @@
             },
             "log4net": {
               "target": "Package",
-              "version": "[2.0.8, )"
+              "version": "[2.0.10, )"
             }
           },
           "imports": [
@@ -166,7 +166,7 @@
             },
             {
               "name": "Microsoft.NETCore.App.Host.win-x64",
-              "version": "[3.0.2, 3.0.2]"
+              "version": "[3.0.3, 3.0.3]"
             },
             {
               "name": "Microsoft.NETCore.App.Ref",
@@ -188,7 +188,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }

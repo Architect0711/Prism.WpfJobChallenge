@@ -1,19 +1,19 @@
 ﻿Prism.WpfJobChallenge
-
+1.0.0.0
 
 winexe
 C#
 .cs
-C:\Users\RBant\source\repos\_Prism.WpfJobChallenge\Prism.WpfJobChallenge\obj\Debug\netcoreapp3.0\
+C:\Users\Robert\Desktop\New folder\Prism.WpfJobChallenge\Prism.WpfJobChallenge\obj\Debug\netcoreapp3.0\
 Prism.WpfJobChallenge
 none
 false
-TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_0
-C:\Users\RBant\source\repos\_Prism.WpfJobChallenge\Prism.WpfJobChallenge\App.xaml
+TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_0;
+C:\Users\Robert\Desktop\New folder\Prism.WpfJobChallenge\Prism.WpfJobChallenge\App.xaml
 31693850543
 
-122075890632
-211-968500890
+13-957305308
+211-1695012376
 Styles\ApplicationStyles.xaml;Views\MainWindow.xaml;Views\Plot.xaml;
 
 False
